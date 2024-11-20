@@ -1,0 +1,14 @@
+{
+    "Tema 1": [
+        {
+            "question": "Pregunta 1",
+            "options": {
+                "a": "Opción a",
+                "b": "Opción b",
+                "c": "Opción c",
+                "d": "Opción d"
+            },
+            "answer": "a"
+        }
+    ]
+}
