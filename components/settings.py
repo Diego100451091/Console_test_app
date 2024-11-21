@@ -9,7 +9,7 @@ from utils.utils import get_settings
 def change_language():
     settings = read_json_file(SETTINGS_PATH)
     current_language = settings.get("language", "es")
-    new_language = "en" if current_language == "es" else "es"
+    new_language = "en" if current_language == "es" else "en"
     settings["language"] = new_language
     write_json_file(SETTINGS_PATH, settings)
     print(f"Language changed to {new_language}")

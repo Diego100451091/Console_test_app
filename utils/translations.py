@@ -7,6 +7,6 @@ def load_translations(language):
 
 def get_translations():
     settings = read_json_file(SETTINGS_PATH)
-    language = settings.get("language", "es")
+    language = settings.get("language", "es") if settings else "en"
     translations = load_translations(language)
     return translations
