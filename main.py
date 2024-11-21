@@ -1,12 +1,12 @@
 import getpass
-
-from utils.IO import read_json_file, delete_file
+from utils.IO import delete_file
 from utils.utils import clear_terminal
 from utils.terminalPrints import print_title
 from utils.translations import get_translations
 from components.studyMode import study_mode
-from components.guessMode import guess_mode
-from components.settings import settings_mode, get_settings
+from components.guessMode import guess_mode, guess_wrong_questions_mode
+from components.settings import settings_mode
+from constants.constants import WRONG_QUESTIONS_PATH
 
 def main():
     while True:
@@ -27,14 +27,9 @@ def main():
         elif option == "2":
             guess_mode()
         elif option == "3":
-            wrong_dict = read_json_file("wrong_questions.json")
-            if wrong_dict:
-                guess_mode(wrong_dict)
-            else:
-                print(translations["no_wrong_questions_message"])
-                getpass.getpass(translations["press_enter_message"])
+            guess_wrong_questions_mode()
         elif option == "4":
-            delete_file("wrong_questions.json")
+            delete_file(WRONG_QUESTIONS_PATH)
             print(translations["delete_record_message"])
             getpass.getpass(translations["press_enter_message"])
         elif option == "5":

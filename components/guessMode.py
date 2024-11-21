@@ -1,27 +1,39 @@
 import sys
 import random
+import getpass
 from utils.utils import clear_terminal
 from utils.terminalPrints import print_title, print_progress, print_colored_text, print_question
-from utils.IO import write_json_file, append_json_file
-from utils.utils import get_questions, get_exit
+from utils.IO import read_json_file, write_json_file, append_json_file
+from utils.utils import get_questions, get_wrong_questions, get_exit, randomize_options
 from utils.translations import get_translations
-
-def randomize_options(options, answer):
-    randomized_options = list(options.values())
-    random.shuffle(randomized_options)
-    correct_option = ["a", "b", "c", "d"].pop(randomized_options.index(answer))
-    return randomized_options, correct_option
+from constants.constants import WRONG_QUESTIONS_PATH
 
 def guess_mode():
-    remaining_questions = get_questions()
-    translations = get_translations()
-    # Clear the wrong questions file
-    write_json_file("wrong_questions.json", [])
+    questions = get_questions()
+    _guess_mode(questions)
 
+def guess_wrong_questions_mode():
+    translations = get_translations()
+
+    wrong_questions = get_wrong_questions()
+    if len(wrong_questions) == 0:
+        print(translations["no_wrong_questions_message"])
+        getpass.getpass(translations["press_enter_message"])
+        return 
+        
+    _guess_mode(wrong_questions)
+
+def _guess_mode(questions):
+    translations = get_translations()
+
+    # Reset the wrong questions file
+    write_json_file(WRONG_QUESTIONS_PATH, [])
+
+    questions = questions
     wrong_questions = []
     
     status_vector = []
-    total_questions_lenght = len(remaining_questions)
+    total_questions_lenght = len(questions)
     for i in range(total_questions_lenght):
         status_vector.append(0)
     status_index = 0
@@ -31,11 +43,11 @@ def guess_mode():
         print_title(translations["test_mode_title"])
         print_progress(status_vector)
 
-        if (len(remaining_questions) == 0):
+        if (len(questions) == 0):
             print(translations["all_questions_shown_message"])
             break
 
-        question = remaining_questions.pop(random.randrange(len(remaining_questions)))
+        question = questions.pop(random.randrange(len(questions)))
         randomized_options, correct_option = randomize_options(question["options"], question["options"][question["answer"]])
        
         print_question(question["question"], randomized_options)
@@ -50,7 +62,7 @@ def guess_mode():
             print(translations["correct_option_message"], correct_option)
             status_vector[status_index] = -1
             wrong_questions.append(question)
-            append_json_file("wrong_questions.json", question)
+            append_json_file(WRONG_QUESTIONS_PATH, question)
 
         status_index += 1
 

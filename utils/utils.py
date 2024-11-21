@@ -1,6 +1,7 @@
 import os
+import random
 from utils.IO import read_json_file
-from constants.constants import QUESTIONS_PATH, SETTINGS_PATH
+from constants.constants import QUESTIONS_PATH, SETTINGS_PATH, WRONG_QUESTIONS_PATH
 from utils.translations import get_translations
 
 def clear_terminal():
@@ -59,3 +60,13 @@ def get_questions():
             # Add the list to the questions list
             questions += all_questions[setting]
     return questions
+
+def get_wrong_questions():
+    data = read_json_file(WRONG_QUESTIONS_PATH)
+    return data if data else []
+
+def randomize_options(options, answer):
+    randomized_options = list(options.values())
+    random.shuffle(randomized_options)
+    correct_option = ["a", "b", "c", "d"].pop(randomized_options.index(answer))
+    return randomized_options, correct_option
