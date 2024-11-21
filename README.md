@@ -50,7 +50,7 @@ We welcome contributions to improve Console_test_app. To contribute, follow thes
 4. Push to the branch (`git push origin feature-branch`).
 5. Open a pull request.
 
-Please ensure your code adheres to the project's coding standards and includes appropriate tests. For more details, refer to the [CONTRIBUTING](CONTRIBUTING.md) file.
+Please ensure your code adheres to the project's coding standards and includes appropriate tests.
 
 ## Farewell
 Thank you for using Console_test_app. We hope this tool helps you in your exam preparation. Good luck and success in your studies!
