@@ -1,3 +1,4 @@
+#!/bin/python3
 import getpass
 from constants.constants import SETTINGS_PATH
 from utils.IO import read_json_file, write_json_file
@@ -9,10 +10,9 @@ from utils.utils import get_settings
 def change_language():
     settings = read_json_file(SETTINGS_PATH)
     current_language = settings.get("language", "es")
-    new_language = "en" if current_language == "es" else "en"
+    new_language = "en" if current_language == "es" else "es"
     settings["language"] = new_language
     write_json_file(SETTINGS_PATH, settings)
-    print(f"Language changed to {new_language}")
 
 def settings_mode():
     while True:
@@ -49,7 +49,6 @@ def settings_mode():
             break
         elif option == index-1: # Change language
             change_language()
-            settings["language"] = "en" if settings["language"] == "es" else "es"  
         else: # Change the topic activation
             setting = list(settings["topics"].keys())[option-1]
             settings["topics"][setting] = abs(settings["topics"][setting] - 1)
