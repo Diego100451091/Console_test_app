@@ -1,14 +1,306 @@
 {
-    "Tema 1": [
+    "Test Teoría Enero 21": [
         {
-            "question": "Pregunta 1",
+            "question": "Diga cuál de las siguientes tecnologías o protocolos se propuso para evitar la explosión del tamaño de las tablas de encaminamiento.",
             "options": {
-                "a": "Opción a",
-                "b": "Opción b",
-                "c": "Opción c",
-                "d": "Opción d"
+                "a": "ICMP (Internet Control Message Protocol).",
+                "b": "CIDR (Classless Interdomain Routing).",
+                "c": "NAT (Network Address Translation).",
+                "d": "IGMP (Internet Group Management Protocol)."
+            },
+            "answer": "b"
+        },
+        {
+            "question": "Señale cuál de las siguientes afirmaciones sobre IPv6 respecto a IPv4 es correcta:",
+            "options": {
+                "a": "El espacio de direcciones es mayor (128 bits).",
+                "b": "No soporta el protocolo de transporte TCP.",
+                "c": "No soporta el protocolo de transporte UDP.",
+                "d": "La cabecera de datagrama IPv6 no tiene cambios respecto a la IPv4."
             },
             "answer": "a"
+        },
+        {
+            "question": "En el algoritmo de \"congestion avoidance\" de TCP, la ventana de congestión (cwnd) se incrementa:",
+            "options": {
+                "a": "En 1 por cada ACK recibido.",
+                "b": "En 1 por cada ACK de nuevos datos recibido.",
+                "c": "En 1/cwnd por cada ACK recibido.",
+                "d": "En 1/cwnd por cada ACK de datos nuevos recibido."
+            },
+            "answer": "d"
+        },
+        {
+            "question": "Cuál de los siguientes protocolos de control de congestión de TCP se basa en retardo, en lugar de en pérdidas.",
+            "options": {
+                "a": "Reno.",
+                "b": "New Reno.",
+                "c": "Vegas.",
+                "d": "Tahoe."
+            },
+            "answer": "c"
+        },
+        {
+            "question": "En TLS, se inicia el establecimiento de la conexión segura enviando en primer lugar el siguiente mensaje:",
+            "options": {
+                "a": "El cliente envía un ClientHello).",
+                "b": "El servidor envía un ServerHello).",
+                "c": "El cliente envía un ClientKeyExchange.",
+                "d": "El servidor envía un Certificate."
+            },
+            "answer": "a"
+        },
+        {
+            "question": "Cuál de las siguientes afirmaciones sobre los servidores primarios de DNS es falsa:",
+            "options": {
+                "a": "Sólo hay uno por zona.",
+                "b": "Son los responsables de la zona raíz.",
+                "c": "Los secundarios obtienen la información de la zona de un primario.",
+                "d": "Si le preguntamos por un registro de su zona devuelve respuesta autoritativa."
+            },
+            "answer": "b"
+        },
+        {
+            "question": "Para conocer el servidor primario de una zona, hay que hacer una consulta de tipo: 163.117.131.31 tenemos que hacer la siguiente consulta DNS:",
+            "options": {
+                "a": "NS.",
+                "b": "MX.",
+                "c": "SOA.",
+                "d": "PRI."
+            },
+            "answer": "c"
+        },
+        {
+            "question": "En la negociación de opciones de telnet, si un extremo envía al otro IAC WILL option, el otro extremo puede contestar:",
+            "options": {
+                "a": "Únicamente IAC WILL option o IAC WONT option.",
+                "b": "Únicamente IAC WILL option.",
+                "c": "Únicamente IAC DO option.",
+                "d": "Ninguna de las anteriores es correcta."
+            },
+            "answer": "d"  
+        },
+        {
+            "question": "En una conexión de datos usando FTP pasivo:",
+            "options": {
+                "a": "El cliente FTP usa el puerto 20.",
+                "b": "El servido FTP usa el puerto 20.",
+                "c": "El cliente usa el puerto 21.",
+                "d": "Ninguna de las anteriores es correcta."
+            },
+            "answer": "d"
+        },
+        {
+            "question": "Si en un protocolo de correo electrónico recibimos una respuesta del servidor -ERR, ¿de qué protocolo se trata?:",
+            "options": {
+                "a": "SMTP.",
+                "b": "ESMTP.",
+                "c": "POP.",
+                "d": "MIME."
+            },
+            "answer": "c"
+        },
+        {
+            "question": "Respecto al protocolo SPF de correo electrónico:",
+            "options": {
+                "a": "Cifra los correos de una organización extremo a extremo.",
+                "b": "Implica añadir un registro de recurso en el servidor DNS de la organización.",
+                "c": "Es una alternativa a la codificación base64.",
+                "d": "Proporciona un cifrado de los adjuntos de un correo electrónico."
+            },
+            "answer": "b"
+        },
+        {
+            "question": "Cuál de las siguientes cabeceras es obligatoria en las peticiones HTTP/1.1:",
+            "options": {
+                "a": "From.",
+                "b": "Host.",
+                "c": "Date.",
+                "d": "Location."
+            },
+            "answer": "b"
+        },
+        {
+            "question": "Cuál de las siguientes cabeceras no puede aparecer en una petición HTTP/1.1.",
+            "options": {
+                "a": "Date.",
+                "b": "Content-Length.",
+                "c": "Set-Cookie.",
+                "d": "Host."
+            },
+            "answer": "c"
+        },
+        {
+            "question": "En HTTP/1.1, el servidor, tras enviar la respuesta al cliente:",
+            "options": {
+                "a": "Debe cerrar inmediatamente la conexión.",
+                "b": "Debe mantener la conexión abierta si el cliente no ha enviado la cabecera Connection: close.",
+                "c": "Debe mantener la conexión abierta si el cliente ha enviado la cabecera Connection: open.",
+                "d": "Puede cerrar la conexión aunque el cliente no haya enviado la cabecera Connection: close."
+            },
+            "answer": "d"
+        },
+        {
+            "question": "HTTP/2 permite un uso más eficiente de la red (reducir retardo) frente a versiones anteriores de HTTP mediante varios mecanismos, entre ellos:",
+            "options": {
+                "a": "Al uso de QUIC como protocolo de transporte.",
+                "b": "El procesado más eficiente de los mensajes gracias a un nuevo formato binario.",
+                "c": "El uso de datos troceados (Transfer-Encoding: chunked).",
+                "d": "La nueva respuesta 100 Continue."
+            },
+            "answer": "b"
+        }
+    ],
+    "Test Teoría Enero 23": [
+        {
+            "question": "¿Cuál es protocolo de nivel de red qué en la arquitectura TCP/IP nos permitirá asignar de forma dinámica una dirección IP a la interfaz de red?",
+            "options": {
+                "a": "ICMP",
+                "b": "IGMP",
+                "c": "DHCP",
+                "d": "CIDR"
+            },
+            "answer": "c"
+        },
+        {
+            "question": "Una compañía dispone de la dirección de red 162.82.0.0. Se desea crear una subred por cada una de las 4 sedes de la compañía, todas con el mismo número de hosts. ¿Cuál será la máscara de red de cada una de las subredes?",
+            "options": {
+                "a": "255.255.192.0",
+                "b": "255.255.255.192",
+                "c": "255.255.252.0",
+                "d": "255.255.255.252"
+            },
+            "answer": "a"
+        },
+        {
+            "question": "¿Cuál de las siguientes afirmaciones acerca de ipsec es falsa?",
+            "options": {
+                "a": "Utilizado en modo tunel, el datagrama ip original es encapsulado en un nuevo datagrama ip con una nueva cabecera IP",
+                "b": "El protocolo AH (authentication header) ofrece autenticación del emisor e integridad de datos, pero no confidencialidad",
+                "c": "El protocolo Encapsulation Security Payload (ESP) ofrece integridad de datos y confidencialidad, pero no autenticación del emisor",
+                "d": "Las asociaciones de seguridad son unidireccionales, por lo que si queremos realizar comunicaciones bidireccionales entre dos entidades IPsec será necesario crear dos SAs"
+            },
+            "answer": "c"
+        },
+        {
+            "question": "En una conexión TCP ¿cuál es el objetivo del temporizador 2MSL?",
+            "options": {
+                "a": "Permite esperar un tiempo para garantizar que se cierra correctamente la conexión",
+                "b": "Permite detectar cuando el otro extremo de la conexión se cae o se reinicializa.",
+                "c": "Permite retransmitir datos si no se recibe un asentimiento del receptor.",
+                "d": "Permite el flujo de información del tamaño de la ventana aunque el otro extremo haya cerrado la ventana anunciada."
+            },
+            "answer": "a"
+        },
+        {
+            "question": "¿Cuál de las siguientes afirmaciones acerca de TLS es falsa?",
+            "options": {
+                "a": "Es un protocolo de seguridad implementado en la capa de aplicación inmediatamente por encima de la capa de transporte, pudiendo ser utilizado tanto con TCP como por UDP",
+                "b": "Proporciona encriptación, autenticación e integridad",
+                "c": "Está compuesto por 2 subprotocolos, uno para establecer la conexión segura y otro para realizar el envío de datos a través de esa conexión",
+                "d": "Durante el proceso de obtención del registro TLS se realiza un proceso de compresión de los fragmentos del mensaje original recibido del nivel superior"
+            },
+            "answer": "c"
+        },
+        {
+            "question": "¿Qué tipo de registro solicitaría en una consulta DNS si quisiera conocer a que dominio pertenece una determinada dirección IP?",
+            "options": {
+                "a": "SOA",
+                "b": "IP",
+                "c": "PTR",
+                "d": "NS"
+            },
+            "answer": "c"
+        },
+        {
+            "question": "Una consulta con el comando dig nos ha devuelto la siguiente información: \n\n;; QUESTION SECTION:\n;www.upv.es. \n\n;; ANSWER SECTION:\nwww.upv.es.  300 IN A 158.42.4.23\nias.bb.upv.es. 3600 IN CNAME ias.bb.upv.es.\n\n;; AUTHORITY SECTION:\nupv.es. 86400 IN NS mirzam.upv.es.\n\n¿Cuál ha sido el tamaño en bytes del campo información de autorización del mensaje de respuesta DNS?",
+            "options": {
+                "a": "19",
+                "b": "20",
+                "c": "21",
+                "d": "22"
+            },
+            "answer": "c"
+        },
+        {
+            "question": "¿Cuál de los siguientes datos no es enviado por un cliente para establecer una conexión rlogin?",
+            "options": {
+                "a": "El login del usuario en cliente",
+                "b": "El login del usuario en servidor",
+                "c": "La password del usuario en el servidor",
+                "d": "El tipo de terminal"
+            },
+            "answer": "c"
+        },
+        {
+            "question": "¿Cuántas conexiones TCP habrá sido necesario establecer, como mínimo, para mostrar los ficheros almacenados en un directorio de un servidor FTP, descargar 2 ficheros y subir un fichero?",
+            "options": {
+                "a": "2",
+                "b": "3",
+                "c": "4",
+                "d": "5"
+            },
+            "answer": "d"
+        },
+        {
+            "question": "¿Cuál de las siguientes afirmaciones acerca de la cabecera Content-Transfer-Encoding en MIME es falsa?",
+            "options": {
+                "a": "El valor de la cabecera aplica sólo al cuerpo del mensaje, no a las cabeceras",
+                "b": "En un mensaje multipart, todas las partes deben llevar la misma codificación",
+                "c": "El valor de la cabecera Content-Type no condiciona el uso de una determinada codificación",
+                "d": "No todos los posibles valores que puede tomar la cabecera, indican que se ha realizado una codificación"
+            },
+            "answer": "b"
+        },
+        {
+            "question": "¿Qué estrategia contra el SPAM recomienda separar el tráfico entre MTAs y el tráfico entre UAs y MTAs utilizando para ello un puerto distinto al habitual?",
+            "options": {
+                "a": "Mail submission",
+                "b": "SPF",
+                "c": "DKIM",
+                "d": "DMARC"
+            },
+            "answer": "a"
+        },
+        {
+            "question": "En la siguiente conexión HTTP ¿qué versión del protocolo HTTP se ha utilizado para descargar el fichero /index.html?\n\n~>telnet www.it.uc3m.es 80\nTrying 163.117.139.130...\nConnected to bajo.it.uc3m.es.\nEscape character is '^]'.\nGET /index.html\n<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">\n<html>\n...\n</html>\nConnection closed by foreign host.",
+            "options": {
+                "a": "HTTP/0.9",
+                "b": "HTTP/1.0",
+                "c": "HTTP/1.1",
+                "d": "HTTP/2"
+            },
+            "answer": "a"
+        },
+        {
+            "question": "¿A partir de que versión de HTTP las cabeceras Date y Host pasan a ser obligatorias en respuestas y peticiones respectivamente?",
+            "options": {
+                "a": "HTTP/0.9",
+                "b": "HTTP/1.0",
+                "c": "HTTP/1.1",
+                "d": "HTTP/2"
+            },
+            "answer": "c"
+        },
+        {
+            "question": "¿Cuál de las siguientes afirmaciones acerca del protocolo HTTP/2 es falsa?",
+            "options": {
+                "a": "Define un formato binario de peticiones y respuestas",
+                "b": "Las cabeceras se transmiten comprimidas",
+                "c": "Proporciona soporte para peticiones concurrentes dentro una misma conexión.",
+                "d": "No permite la priorización de peticiones"
+            },
+            "answer": "d"
+        },
+        {
+            "question": "Entre las simplificaciones realizadas en CoAP con respecto al protocolo HTTP ¿cuál de los siguientes códigos de respuesta que podemos encontrar en HTTP no está presente en CoAP?",
+            "options": {
+                "a": "Éxito: 2XX",
+                "b": "Redirección: 3XX",
+                "c": "Error en el cliente: 4XX",
+                "d": "Error en el servidor: 5XX"
+            },
+            "answer": "b"
         }
     ]
 }
