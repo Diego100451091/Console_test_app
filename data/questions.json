@@ -8,7 +8,8 @@
                 "c": "Opción c",
                 "d": "Opción d"
             },
-            "answer": "a"
+            "answer": "a",
+            "explanation": "Explicación de la pregunta 1"
         }
     ]
 }

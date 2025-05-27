@@ -22,6 +22,7 @@
         "correct_message": "Correct!",
         "incorrect_message": "Incorrect",
         "correct_option_message": " - The correct option was: ",
+        "explanation_message": "Explanation: ",
         "all_questions_shown_message": "All questions have been shown",
         "wrong_questions_paragraph": "Wrong questions:",
         "settings_mode_title": "SELECT THE TOPICS TO USE",
@@ -29,6 +30,7 @@
         "desactivated": "Deactivated",
         "study_mode_title": "STUDY MODE",
         "change_language": "Change language",
+        "show_explanations": "Show explanations",
         "exit_and_save": "Exit and save changes",
         "english_languaje": "English",
         "spanish_languaje": "Spanish"

@@ -33,6 +33,11 @@ def settings_mode():
         print(f"{index}. {translations['change_language']}: ", end="")
         print_status(settings.get("language", "es")=="en", translations["english_languaje"], translations["spanish_languaje"])
 
+        # Print the show explanations option
+        index += 1
+        print(f"{index}. {translations['show_explanations']}: ", end="")
+        print_status(settings.get("show_explanations", True), translations["activated"], translations["desactivated"])
+        
         # Print the exit and save option
         index += 1
         print(f"{index}. {translations['exit_and_save']}")
@@ -47,8 +52,11 @@ def settings_mode():
         option = int(option)
         if option == index: # Exit and save
             break
-        elif option == index-1: # Change language
+        elif option == index-2: # Change language
             change_language()
+        elif option == index-1: # Change the show explanations option
+            settings["show_explanations"] = not settings.get("show_explanations", True)
+            write_json_file(SETTINGS_PATH, settings)
         else: # Change the topic activation
             setting = list(settings["topics"].keys())[option-1]
             settings["topics"][setting] = abs(settings["topics"][setting] - 1)

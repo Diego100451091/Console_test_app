@@ -4,7 +4,7 @@ import getpass
 from utils.utils import clear_terminal
 from utils.terminalPrints import print_title, print_progress, print_colored_text, print_question
 from utils.IO import read_json_file, write_json_file, append_json_file
-from utils.utils import get_questions, get_wrong_questions, get_exit, randomize_options
+from utils.utils import get_questions, get_wrong_questions, get_exit, randomize_options, are_explanations_enabled
 from utils.translations import get_translations
 from constants.constants import WRONG_QUESTIONS_PATH
 
@@ -54,12 +54,14 @@ def _guess_mode(questions):
 
         user_answer = get_user_answer()
 
-        if (user_answer ==correct_option):
+        if (user_answer == correct_option):
             print_colored_text(translations["correct_message"], "green")
             status_vector[status_index] = 1
         else:
             print_colored_text(translations["incorrect_message"], "red", "")
             print(translations["correct_option_message"], correct_option)
+            if question.get("explanation") and are_explanations_enabled():
+                print(translations["explanation_message"], question["explanation"])
             status_vector[status_index] = -1
             wrong_questions.append(question)
             append_json_file(WRONG_QUESTIONS_PATH, question)
