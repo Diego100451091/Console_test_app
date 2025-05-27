@@ -8,7 +8,7 @@ from utils.translations import get_translations
 from utils.utils import get_settings
 
 def change_language():
-    settings = read_json_file(SETTINGS_PATH)
+    settings = get_settings()
     current_language = settings.get("language", "es")
     new_language = "en" if current_language == "es" else "es"
     settings["language"] = new_language

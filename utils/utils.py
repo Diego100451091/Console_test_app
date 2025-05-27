@@ -46,6 +46,14 @@ def get_settings():
         for key in settingsSchema:
             if key not in previous_settings:
                 settings[key] = settingsSchema[key]
+        
+        for key in settings["topics"]:
+            if key not in themes:
+                settings["topics"].pop(key, None)
+
+        for theme in themes:
+            if theme not in settings["topics"]:
+                settings["topics"][theme] = 1
     else:
         settings = settingsSchema
     return settings
