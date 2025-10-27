@@ -37,7 +37,8 @@ def get_settings():
     # Set the settings with the themes as keys and 1 as value
     settingsSchema = {
         "topics": {theme: 1 for theme in themes},
-        "language": "es"
+        "language": "es",
+        "show_explanations": True,
     }
         
     previous_settings = read_json_file(SETTINGS_PATH)
@@ -58,6 +59,16 @@ def get_settings():
         settings = settingsSchema
     return settings
 
+def are_explanations_enabled():
+    """
+    Checks if the explanations are enabled in the settings.
+
+    Returns:
+    - True if explanations are enabled
+    - False otherwise
+    """
+    settings = get_settings()
+    return settings.get("show_explanations", True)
 
 def get_questions():
     settings = get_settings()

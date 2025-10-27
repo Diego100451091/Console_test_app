@@ -22,6 +22,7 @@
         "correct_message": "¡Correcto!",
         "incorrect_message": "Incorrecto",
         "correct_option_message": " - La opción correcta era: ",
+        "explanation_message": "Explicación: ",
         "all_questions_shown_message": "Ya se han mostrado todas las preguntas",
         "wrong_questions_paragraph": "Palabras falladas:",
         "settings_mode_title": "SELECCIONE LOS TEMAS A UTILIZAR",
@@ -29,6 +30,7 @@
         "desactivated": "Desactivado",
         "study_mode_title": "MODO ESTUDIO",
         "change_language": "Cambiar idioma",
+        "show_explanations": "Show explanations",
         "exit_and_save": "Salir y guardar los cambios",
         "english_languaje": "Inglés",
         "spanish_languaje": "Español"
